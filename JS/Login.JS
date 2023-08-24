@@ -7,7 +7,7 @@ document.getElementById('Submit-Btn').addEventListener('click', function () {
     const Password = PasswordField.value;
 
     if (Email === 'kingalvi@khan.com' && Password === 'khan 555 khan') {
-        window.location = 'http://127.0.0.1:5500/Index.html';
+        window.location = 'Index.HTML';
     }
     else {
         alert('Wrong Email OR Pssword !!')
