@@ -16,10 +16,10 @@ document.getElementById('Submit-Btn').addEventListener('click', function () {
 
 document.getElementById('Show password').addEventListener('click', function () {
     const PasswordField = document.getElementById('Password-Field');
-    if (PasswordField.type = 'password'){
+    if (PasswordField.type = 'password') {
         PasswordField.type = 'text'
     }
-    else{
+    else {
         PasswordField.type = 'password'
     }
 })
