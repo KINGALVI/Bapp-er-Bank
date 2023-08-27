@@ -3,9 +3,9 @@ document.getElementById("Deposit-Button").addEventListener('click', function () 
     const DepositInputField = document.getElementById("Deposit-Input-Field");
     const DepositInputFieldInnerText = DepositInputField.value;
     DepositInputField.value = '';
-    const DepositInputFieldNumber = parseFloat(DepositInputFieldInnerText.trim());
+    const DepositInputFieldNumber = parseFloat(DepositInputFieldInnerText);
     if (isNaN(DepositInputFieldNumber)) {
-        alert("Please enter a valid number!");
+        alert("Please Enter A Valid Number !");
         return;
     }
 
@@ -20,4 +20,54 @@ document.getElementById("Deposit-Button").addEventListener('click', function () 
     const BalanceHoldingPlaceNumber = parseFloat(BalanceHoldingPlaceInnnerText);
     const BlaanceAmmount = BalanceHoldingPlaceNumber + DepositAmmout;
     BalanceHoldingPlace.innerText = BlaanceAmmount;
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById('Withdraw-Button').addEventListener('click', function () {
+
+    const WithdrawInputField = document.getElementById('Withdraw-Input-Field');
+    const WithdrawInputFieldValue = WithdrawInputField.value;
+    WithdrawInputField.value = '';
+    const WithdrawInputFieldNumber = parseFloat(WithdrawInputFieldValue);
+    if (isNaN(WithdrawInputFieldNumber)) {
+        alert('Please Enter A Valid Number !')
+        return;
+
+    }
+
+    const WithdrawHoldingPlace = document.getElementById('Withdraw-Holding-Place');
+    const WithdrawHoldingPlaceInnerText = WithdrawHoldingPlace.innerText;
+    const WithdrawHoldingPlaceNumber = parseFloat(WithdrawHoldingPlaceInnerText);
+    const WithdrawAmmount = WithdrawInputFieldNumber + WithdrawHoldingPlaceNumber;
+    WithdrawHoldingPlace.innerText = WithdrawAmmount;
+
+    const BalanceHoldingPlace = document.getElementById("Balance-Holding-Place");
+    const BalanceHoldingPlaceInnnerText = BalanceHoldingPlace.innerText;
+    const BalanceHoldingPlaceNumber = parseFloat(BalanceHoldingPlaceInnnerText);
+    const BlaanceAmmount = BalanceHoldingPlaceNumber - WithdrawAmmount;
+    BalanceHoldingPlace.innerText = BlaanceAmmount;
+
 })
