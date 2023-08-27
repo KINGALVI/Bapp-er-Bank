@@ -23,29 +23,6 @@ document.getElementById("Deposit-Button").addEventListener('click', function () 
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.getElementById('Withdraw-Button').addEventListener('click', function () {
 
     const WithdrawInputField = document.getElementById('Withdraw-Input-Field');
@@ -58,16 +35,22 @@ document.getElementById('Withdraw-Button').addEventListener('click', function ()
 
     }
 
+    const BalanceHoldingPlace = document.getElementById("Balance-Holding-Place");
+    const BalanceHoldingPlaceInnnerText = BalanceHoldingPlace.innerText;
+    const BalanceHoldingPlaceNumber = parseFloat(BalanceHoldingPlaceInnnerText);
+
+
+    if (WithdrawInputFieldNumber > BalanceHoldingPlaceNumber) {
+        alert("You Don't Have Sufficient Balance !")
+        return
+    }
+
     const WithdrawHoldingPlace = document.getElementById('Withdraw-Holding-Place');
     const WithdrawHoldingPlaceInnerText = WithdrawHoldingPlace.innerText;
     const WithdrawHoldingPlaceNumber = parseFloat(WithdrawHoldingPlaceInnerText);
     const WithdrawAmmount = WithdrawInputFieldNumber + WithdrawHoldingPlaceNumber;
     WithdrawHoldingPlace.innerText = WithdrawAmmount;
 
-    const BalanceHoldingPlace = document.getElementById("Balance-Holding-Place");
-    const BalanceHoldingPlaceInnnerText = BalanceHoldingPlace.innerText;
-    const BalanceHoldingPlaceNumber = parseFloat(BalanceHoldingPlaceInnnerText);
     const BlaanceAmmount = BalanceHoldingPlaceNumber - WithdrawAmmount;
     BalanceHoldingPlace.innerText = BlaanceAmmount;
-
 })
